@@ -6,7 +6,7 @@
 
 
 def main():
-    # this functoin adds the numbers
+    # this function adds the numbers
 
     # variables
     loop_counter = 0
