@@ -10,13 +10,12 @@ def main():
 
     # variables
     loop_counter = 0
-    lst = []
+    sum_of_numbers = 0
 
     # input
-    times_to_add_as_string = input(
-          "How many numbers would you like to add together? ")
+    times_to_add_as_string = input("How many numbers would you like to add? ")
 
-    # process
+    # process & output
     try:
         times_to_add = int(times_to_add_as_string)
         if times_to_add > 0:
@@ -24,18 +23,14 @@ def main():
                 user_input = input("Enter a number you wish to add: ")
                 try:
                     number = float(user_input)
-                    if number > 0:
-                        for loop_counter in range(times_to_add + 1):
-                            if loop_counter < number:
-                                loop_counter = loop_counter + 1
-                                total = sum(lst.append(number))
-                            else:
-                                continue
-                    else:
+                    loop_counter += 1
+                    if number < 0:
                         continue
+                    sum_of_numbers += number
                 except (Exception):
                     continue
-            print("\nThe sum of the positive numbers is {0}".format(total))
+            print("\nThe sum of the positive numbers is {0}".format(
+                  sum_of_numbers))
         elif times_to_add < 0:
             print("\nUnable to add that many numbers")
         else:
